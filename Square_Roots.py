@@ -4,6 +4,8 @@
 def sqrt_ld(n, decimal):
     '''Taking the square root of a number n via long division method. Decimal
     specifies what decimal place to go to. Python output is limited to 20 digits.'''
+    ## Extremey slow for big numbers. Should find a way to do this better
+    ## Need to modify the lower bound of initial whole number guess
 
     answer = None
     divisor = None
@@ -11,15 +13,17 @@ def sqrt_ld(n, decimal):
     extra_divisor = 0
     add_zeros = 0
     next_digit = None
+    low = 1
 
-    if 0<n<1:
+
+    if n%1 != 0:
         while n%1 != 0:
             n = 10*n
             extra_divisor += 1
         n = int(n)
 
-
-    for i in range(1,n+1):
+    
+    for i in range(1,n):
         if (i**2) <= n:
             answer = i
             divisor = n // i
