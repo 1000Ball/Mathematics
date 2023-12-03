@@ -108,8 +108,6 @@ def sqrt_NR(n, decimal):
         x = next_x
         next_x = function(x)
         #print(x, next_x) # if you want to see steps taken
-        #if x == next_x:
-        #    break
 
 
     ## Same way other function was handled. Iteration for numbers less than one
